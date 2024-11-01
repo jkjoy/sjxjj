@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机视频播放</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f0f0f0, #c9d6ff);
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        video {
+            max-width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px; /* 增加按钮左侧的间距 */
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .controls {
+            display: flex;
+            align-items: center; /* 垂直居中对齐 */
+            margin-top: 20px; /* 增加顶部间距 */
+        }
+        select {
+            width: 200px; /* 设置选择框宽度 */
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+        select:focus {
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>随机视频播放</h1>
+
+<video id="videoPlayer" controls autoplay muted>
+    您的浏览器不支持视频播放。
+</video>
+
+<div class="controls">
+    <select id="sort">
+        <option value="http://dududududu.cn:327/sjxjj.php">嘟嘟精选</option>
+        <option value="http://api.yujn.cn/api/zzxjj.php">学姐系列</option>
+        <option value="http://api.yujn.cn/api/xjj.php">卡哇伊</option>
+        <option value="http://api.yujn.cn/api/juhexjj.php">嫩嫩系列</option>
+        <option value="http://api.yujn.cn/api/shwd.php">丝滑舞蹈</option>
+        <option value="http://api.yujn.cn/api/wmsc.php">完美身材</option>
+        <option value="http://api.yujn.cn/api/jpmt.php">极品玉足</option>
+        <option value="http://api.yujn.cn/api/manyao.php">慢摇系列</option>
+        <option value="http://api.yujn.cn/api/diaodai.php">丝滑吊带</option>
+        <option value="http://api.yujn.cn/api/qingchun.php">清纯系列</option>
+        <option value="http://api.yujn.cn/api/COS.php">COS系列</option>
+        <option value="http://api.yujn.cn/api/jiepai.php">街拍系列</option>
+        <option value="http://api.yujn.cn/api/lyy.php">懒洋洋歌</option>
+        <option value="http://api.yujn.cn/api/luoli.php">极品萝莉</option>
+        <option value="http://api.yujn.cn/api/ndym.php">你的欲梦</option>
+        <option value="http://api.yujn.cn/api/tianmei.php">甜妹系列</option>
+        <option value="http://api.yujn.cn/api/jksp.php">御丝系列</option>
+        <option value="http://api.yujn.cn/api/yuzu.php">超美玉足</option>
+        <option value="http://api.yujn.cn/api/rewu.php">热舞系列</option>
+        <option value="http://api.yujn.cn/api/ksxjjsp.php">精品收藏</option>
+         </select>
+    <button id="loadVideo">换一个</button>
+</div>
+
+<div class="footer">
+    © 2024 随机小姐姐视频播放器 | 
+    <a href="http://dududududu.cn:327/" target="_blank">杜嘟嘟的Blog</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+function loadVideo() {
+    const selectedApi = document.getElementById('sort').value;
+    
+    const videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.src = selectedApi; // 直接将视频源设置为选中的接口
+    videoPlayer.load(); // 重新加载视频
+    videoPlayer.play(); // 尝试播放视频
+}
+
+// 页面加载时自动加载视频
+window.onload = loadVideo;
+
+// 切换接口时加载新视频
+document.getElementById('sort').addEventListener('change', loadVideo);
+
+// 点击按钮时加载新视频
+document.getElementById('loadVideo').addEventListener('click', loadVideo);
+</script>
+
+</body>
+</html>
