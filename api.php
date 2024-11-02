@@ -1,6 +1,6 @@
 <?php
 // 设置视频文件夹路径
-$videoDir = __DIR__ . '/video';
+$videoDir = __DIR__ . './video';
 
 // 检查文件夹是否存在
 if (!is_dir($videoDir)) {
