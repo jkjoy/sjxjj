@@ -6,75 +6,7 @@
     <title>随机视频播放</title>
  
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #f0f0f0, #c9d6ff);
-            color: #333;
-            text-align: center;
-        }
-        h1 {
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        video {
-            max-width: 80%;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-left: 10px; /* 增加按钮左侧的间距 */
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-        .footer a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        .controls {
-            display: flex;
-            align-items: center; /* 垂直居中对齐 */
-            margin-top: 20px; /* 增加顶部间距 */
-        }
-        select {
-            width: 200px; /* 设置选择框宽度 */
-            padding: 8px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            cursor: pointer;
-            transition: box-shadow 0.3s ease;
-        }
-        select:focus {
-            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
